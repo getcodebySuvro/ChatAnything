@@ -101,7 +101,7 @@ export default function Home() {
 
       }catch(err){
         alert("Server is overloaded with rquests, please try again later");
-        setError({status:true});
+        setError({status:true})
       }
       
     }
