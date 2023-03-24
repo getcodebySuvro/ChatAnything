@@ -1,0 +1,138 @@
+
+
+
+.username{
+    font-family: webfont;
+    font-size: 50px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    background: -webkit-linear-gradient(#bb04fd,#6d007100);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: capitalize;
+}
+.list{
+    position: absolute;
+    top: 40px;
+    right: 50px;
+}
+.userNavigateLinks{
+    margin-left: 30px;
+    font-family: textfont;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    transition: 0.3s;
+}
+.userNavigateLinks:hover{
+    color: #bb04fd;
+}
+
+.email{
+    margin-top: -10px;
+    margin-left: 20px;
+    font-family: title;
+    font-style: italic;
+    font-size: 20px;
+    color: aqua;
+}
+.logout{
+    width: 250px;
+    padding: 10px 7px;
+    background-color: #8d04fd;
+    color: rgb(0, 0, 0);
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-family: title;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.logout:hover{
+    color: white;
+    background-color: #b224ff;
+}
+.deltacc{
+    width: 250px;
+    padding: 10px 7px;
+    background-color:#8d04fd ;
+    color: rgb(0, 0, 0);
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    margin-left: 10px;
+    font-family: title;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.deltacc:hover{
+    color: white;
+    background-color: #d00000;
+}
+
+.accimage{
+    position: absolute;
+    right: 25px;
+    top: 110px;
+    filter: drop-shadow(5px 5px 50px #b224ff53);
+    animation: scale-up-center 1.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@-webkit-keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  @keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+
+@media (max-width:550px){
+    .headcontainer{
+        margin-left: 5px;
+        width: 100%;
+    }
+    .accimage{
+        position:static;
+        margin-left: 20px;
+    }
+    .buttonsec{
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+    .logout{
+        width: 95%;
+    }
+    .deltacc{
+        width: 95%;
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+}
+@media (min-width:551px) and (max-width:990px) {
+    .headcontainer{
+        margin-left: 60px;
+        width: 100%;
+    }
+    .accimage{
+        position:static;
+        margin-left: 60px;
+        margin-top: 60px;
+        transform: scale(1.2);
+    }
+}
