@@ -11,7 +11,7 @@ import  Head  from 'next/head'
 const UserAcc =()=> {
 
   const[userData,setUserData]=useState({id:null,username:null,email:null})
-  const router = useRouter();
+  const router = useRouter()
 
 
   useEffect(()=>{
