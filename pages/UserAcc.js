@@ -37,7 +37,7 @@ const UserAcc =()=> {
         },
       }).then((res)=>res.json()).then((data)=>{
         if(data=="Deleted"){
-          clearLocalStorage_And_gotoLandingpage();
+          clearLocalStorage_And_gotoLandingpage()
           alert("Account Deleted Successfully")
           
         }
