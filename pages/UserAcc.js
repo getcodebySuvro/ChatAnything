@@ -52,7 +52,7 @@ const UserAcc =()=> {
     }
     
     const logOutPressed = ()=>{
-      clearLocalStorage_And_gotoLandingpage();
+      clearLocalStorage_And_gotoLandingpage()
       
     }
 
