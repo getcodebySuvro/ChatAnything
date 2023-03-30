@@ -504,12 +504,12 @@
     width: 100vw;
     height: 100vh;
     margin: 0px;
+    padding: 0px;
     border-radius: 0px;
-    position: fixed;
     animation: none;
   }
   .chatwindow{
-    height: 85%;
+    height: 80%;
     width: 93%;
   }
   .formfield{

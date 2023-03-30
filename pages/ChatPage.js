@@ -115,7 +115,7 @@ const getPromptValue = (e)=>{
       await  fetch("/api/Routes/NotesRoute/",{
         method:"POST",
         body:JSON.stringify({
-          username:"hello",
+          username:localStorage.getItem("username"),
           question:allMsg[index-1].msgg,
           ans:allMsg[index].msgg
         }),
