@@ -33,7 +33,7 @@ async function  handler (req, res) {
       frequency_penalty:0.5,
       presence_penalty:0,
   })
-  res.json({message:response.data.choices[0].text})
+  res.send(response.data.choices[0].text)
     }catch(err){
       console.log(err);
     }
