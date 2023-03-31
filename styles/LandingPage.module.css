@@ -207,7 +207,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 30px 10px;
+    padding: 50px 10px;
     width: 95%;
     height: 100%;
     background-color: rgba(245, 245, 245, 0.107);
@@ -329,8 +329,6 @@
         animation: none;
     }
     .left{
-        position: absolute;
-        bottom: 70px;
         width: 95%;
         text-align: center;
         transition: 0.3s;
@@ -354,8 +352,6 @@
         margin-top: 10px;
     }
     .right{
-        position: absolute;
-        top: 20px;
         display: flex;
         width: 100%;
         text-align: center;
