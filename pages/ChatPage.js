@@ -90,7 +90,7 @@ const getPromptValue = (e)=>{
   const handleSubmit =(e)=>{
     e.preventDefault();
     if(allMsg && promptinput){
-      setMyMsg({name:"user",msgg:promptinput,saved:false});
+      setMyMsg({name:localStorage.getItem("username"),msgg:promptinput,saved:false});
       sendData();
       setPrompinput("");
     }
@@ -170,7 +170,7 @@ const getPromptValue = (e)=>{
               
 
               allMsg && allMsg.map((msg,index)=>(
-                msg.name==="user"
+                msg.name!=="bot"
                 ?
                 <div className={styles.usersection} key={index}>
                 <FaUserCheck className={styles.userimage}/>
