@@ -115,7 +115,7 @@ const SavedNotePage = () => {
         }).then((res)=>{
           if(res){
             delete notes[index];
-            setDeleted(false);
+            setDeleted(false)
             
           }
           
