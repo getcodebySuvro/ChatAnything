@@ -36,7 +36,7 @@ const SavedNotePage = () => {
 
 
   useEffect(()=>{
-    if(answerref.current) showFullEditAns();
+    if(answerref.current) showFullEditAns()
   },[showEditor])
 
   useEffect(()=>{
