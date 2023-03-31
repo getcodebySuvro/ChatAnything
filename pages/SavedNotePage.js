@@ -122,7 +122,7 @@ const SavedNotePage = () => {
         })
       }catch(err){
         alert("Server is overloaded with rquests, please try again later");
-        console.log(err)
+        console.log(err);
       }
     }
     
