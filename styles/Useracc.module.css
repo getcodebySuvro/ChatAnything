@@ -1,6 +1,3 @@
-
-
-
 .username{
     font-family: title;
     font-size: 50px;
@@ -103,10 +100,16 @@
     .headcontainer{
         margin-left: 5px;
         width: 100%;
+        margin-top: 70px;
+    }
+    .username{
+        margin-top: -15px;
+        margin-bottom: 3px;
     }
     .accimage{
         position:static;
-        margin-left: 20px;
+        width: 270px;
+        height: 300px;
     }
     .buttonsec{
         display: flex;
