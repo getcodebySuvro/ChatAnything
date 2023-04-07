@@ -28,13 +28,30 @@ async function  handler (req, res) {
       
   }
   if(req.method==="POST"){
-    try{
-      const newNote = new  Note(req.body);
-      const SavedNote = await newNote.save();
-      res.status(200).json(SavedNote);
-    }catch(err){
-      console.log(err);
+    if(req.body.user){
+      try{
+        if(Note){
+          const user = req.body;
+          const notes = await Note.find({username:`${user}`}).exec();
+        res.status(200).json(notes);
+        }else{
+          res.status(400).json({success:false,message:"Not Found"});
+        }
+      }catch(err){
+        console.log(err);
+      }
+
     }
+    if(req.body.username){
+      try{
+        const newNote = new  Note(req.body);
+        const SavedNote = await newNote.save();
+        res.status(200).json(SavedNote);
+      }catch(err){
+        console.log(err);
+      }
+    }
+    
  
   }
 
