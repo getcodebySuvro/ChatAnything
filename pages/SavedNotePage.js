@@ -58,14 +58,21 @@ const SavedNotePage = () => {
    
   const getNotes= async()=>{
     try{
-      const res = await fetch("/api/Routes/NotesRoute/");
-      const data = await res.json();
-      if(data){
-        
+      await  fetch("/api/Routes/NotesRoute/",{
+        method:"POST",
+        body:JSON.stringify({
+          user:localStorage.getItem("username"),
+        }),
+        headers:{
+          "Content-Type":"application/json",
+        },
+      }).then((res)=>res.json()).then((data)=>{
+         if(data){
         setNotes(data);
         setLoader(false)
       }
         
+      });
     }catch(err){
       alert("Server is overloaded with rquests, please try again later");
       console.log(err);
@@ -180,7 +187,7 @@ const SavedNotePage = () => {
        {
         notes && notes.map((note,index)=>{
           return(
-          <div className={note.username===localStorage.getItem("username") ? "" : styles.hideElement}>
+          <>
           
           <div className={savedNotes.notescontainer} key={index}>
             
@@ -224,7 +231,7 @@ const SavedNotePage = () => {
           </div>
           
           
-          </div>
+          </>
           )
             
         })
