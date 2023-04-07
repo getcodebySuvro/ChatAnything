@@ -47,8 +47,8 @@ const SavedNotePage = () => {
 
    const sizeChange = (index)=>{
     if(maxsize) {
-      setMaxSize(false)
-      setShowEditor({status:false})
+      setMaxSize(false);
+      setShowEditor({status:false});
     }else{
       setMaxSize(true)
       setShowEditor( {status:true,id:index});
