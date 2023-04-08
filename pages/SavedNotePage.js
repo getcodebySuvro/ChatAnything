@@ -34,7 +34,6 @@ const SavedNotePage = () => {
     
   },[])
 
-
   useEffect(()=>{
     if(answerref.current) showFullEditAns();
   },[showEditor])
@@ -44,11 +43,10 @@ const SavedNotePage = () => {
   },[deleted,edited])
 
 
-
    const sizeChange = (index)=>{
     if(maxsize) {
-      setMaxSize(false);
-      setShowEditor({status:false});
+      setMaxSize(false)
+      setShowEditor({status:false})
     }else{
       setMaxSize(true)
       setShowEditor( {status:true,id:index});
@@ -154,7 +152,6 @@ const SavedNotePage = () => {
     
       answerref.current.style.height=`${answerref.current.scrollHeight}px`;
     }
- 
   return (
     <>
     <Head>
