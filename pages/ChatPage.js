@@ -18,6 +18,7 @@ const ChatPage = () => {
   const[allMsg,setAllMsg]=useState([]);
   const[botMsg,setBotMsg]=useState(null);
   const[myMsg,setMyMsg]=useState(null);
+  const[saveClicked,setSaveClicked]=useState(false);
   const[noteSuccess,setNoteSuccess]=useState(false)
   const[userExist,setUserExist]=useState(false)
   const showansref = useRef(null);
@@ -107,11 +108,13 @@ const getPromptValue = (e)=>{
   
   
   const saveNote = async (index)=>{
+
+    setSaveClicked(true);
     let newAllmsg = [...allMsg];
     newAllmsg[index]["saved"]=true;
     setAllMsg(newAllmsg);
 
-    try{
+      try{
       await  fetch("/api/Routes/NotesRoute/",{
         method:"POST",
         body:JSON.stringify({
@@ -124,6 +127,7 @@ const getPromptValue = (e)=>{
         },
       }).then((res)=>res.json()).then((data)=>{
         setNoteSuccess(true);
+        setSaveClicked(false);
         
       });
     }catch(err){
@@ -170,7 +174,7 @@ const getPromptValue = (e)=>{
               
 
               allMsg && allMsg.map((msg,index)=>(
-                msg.name!=="bot"
+                msg.name!="bot"
                 ?
                 <div className={styles.usersection} key={index}>
                 <FaUserCheck className={styles.userimage}/>
@@ -182,7 +186,7 @@ const getPromptValue = (e)=>{
               :
 
                 <div className={styles.botsection} key={index}>
-                  <div className={styles.botheader}><AiFillRobot className={styles.botimage}/>{(allMsg[index].saved===true) && noteSuccess ?<MdOutlineDownloadDone className={styles.notesaved} title='Note Saved' />:<MdAddToPhotos className={styles.save} onClick={()=>saveNote(index)} title='Save Notes'/>}</div>
+                  <div className={styles.botheader}><AiFillRobot className={styles.botimage}/>{(allMsg[index].saved===true) && noteSuccess ?<MdOutlineDownloadDone className={styles.notesaved} title='Note Saved' />:(saveClicked ?<MdAddToPhotos className={styles.savefade} title='Save Notes' />:<MdAddToPhotos className={styles.save} onClick={()=>saveNote(index)} title='Save Notes' /> )}</div>
                 
                 <textarea className={savedNotes.notesAnswer} ref={showansref} value={msg.msgg}  readOnly>
                 </textarea>
