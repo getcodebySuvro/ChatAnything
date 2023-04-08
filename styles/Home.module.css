@@ -323,6 +323,17 @@
   background-color: rgba(255, 255, 255, 0.905);
   color: black;
 }
+
+.savefade{
+  font-size: 30px;
+  outline: none;
+  border: none;
+  border-radius: 50px;
+  margin: 7px 0px 3px 10px;
+  color: rgba(255, 255, 255, 0.31);
+  padding: 5px;
+  background-color: #ffffff38;
+}
 .notesaved{
   font-size: 27px;
   outline: none;
@@ -404,7 +415,6 @@
 
 
 .formfield{
-  position: sticky;
   display: flex;
   margin-top: 15px;
   width: 91%;
@@ -503,6 +513,7 @@
   }
   .main{
     padding: 0px;
+    margin: 0px;
   }
   .container{
     width: 100vw;
